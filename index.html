@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ИП Остришко Н.В. — Техническое обслуживание коммерческой недвижимости</title>
   <meta name="description" content="Комплексное техническое обслуживание офисов, ресторанов и коммерческой недвижимости в Москве. Монтаж инженерных систем, аварийная поддержка 24/7. ИП Остришко Н.В.">
+  <meta name="theme-color" content="#0e1b2c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1b2c'/%3E%3Crect x='19' y='19' width='8' height='8' rx='2' fill='%23d9480f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +18,11 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a class="logo" href="#top">
-        <span class="logo__mark"></span>
+        <span class="logo__mark" aria-hidden="true"></span>
         <span class="logo__text">ИП <em>ОСТРИШКО Н.В.</em><small>Обслуживание и спецмонтаж</small></span>
       </a>
 
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Основное меню">
         <a href="#services">Услуги</a>
         <a href="#advantages">Преимущества</a>
         <a href="#steps">Как мы работаем</a>
@@ -30,6 +35,10 @@
       <div class="header__contacts">
         <a href="tel:+79933513004" class="phone-btn copy-phone-btn">+7 (993) 351-30-04</a>
       </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -45,37 +54,45 @@
             Обеспечиваем бесперебойную работу инженерных систем, оперативно устраняем неисправности и поддерживаем коммерческие объекты в идеальном состоянии.
           </p>
 
-          <!-- БЛОК ПАРТНЕРОВ (Без Додо Пиццы) -->
+          <div class="hero__cta">
+            <button class="btn btn--primary copy-phone-btn" type="button">Позвонить инженеру</button>
+            <a class="btn btn--outline" href="#services">Смотреть услуги</a>
+          </div>
+
+          <!-- БЛОК ПАРТНЕРОВ -->
           <div class="partners-block">
             <span class="partners-label">Ранее успешно работали с сетями:</span>
-            <div class="partners-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="partners-grid">
               <div class="partner-card">Rostic's</div>
               <div class="partner-card">SPAR</div>
               <div class="partner-card">pinskiy.co</div>
             </div>
           </div>
-
-          <div class="hero__cta">
-            <button class="btn btn--primary copy-phone-btn" type="button">Позвонить инженеру</button>
-            <a class="btn btn--outline" href="#services">Смотреть услуги</a>
-          </div>
         </div>
 
-        <aside class="card hero__card">
-          <h3>Официальный подрядчик</h3>
-          <p>Работаем по договору. Предоставляем полный комплект закрывающих документов для юрлиц.</p>
-          <ul class="hero__facts">
-            <li><strong>ИП:</strong> Остришко Н.В.</li>
-            <li><strong>ИНН:</strong> 972712228181</li>
-            <li><strong>ОГРНИП:</strong> 325774600678487</li>
-            <li><strong>ИФНС:</strong> № 27 по г. Москве</li>
-          </ul>
-        </aside>
+        <div class="hero__visual">
+          <div class="mosaic">
+            <img class="mosaic__a" src="img/photo_5.jpg" width="960" height="1280" alt="Сантехнические узлы и обвязка">
+            <img class="mosaic__b" src="img/photo_4.jpg" width="960" height="1280" alt="Кабельные трассы и освещение">
+            <img class="mosaic__c" src="img/photo_2.jpg" width="960" height="1280" alt="Обслуживание кассетных блоков">
+          </div>
+
+          <aside class="card hero__card">
+            <h3>Официальный подрядчик</h3>
+            <p>Работаем по договору. Предоставляем полный комплект закрывающих документов для юрлиц.</p>
+            <ul class="hero__facts">
+              <li><strong>ИП:</strong> Остришко Н.В.</li>
+              <li><strong>ИНН:</strong> 972712228181</li>
+              <li><strong>ОГРНИП:</strong> 325774600678487</li>
+              <li><strong>ИФНС:</strong> № 27 по г. Москве</li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </section>
 
-       <!-- БЛОК С ПРЕИМУЩЕСТВАМИ -->
-    <section class="section section--darker" id="advantages">
+    <!-- БЛОК С ПРЕИМУЩЕСТВАМИ -->
+    <section class="section" id="advantages">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Надежность</span>
@@ -84,17 +101,20 @@
         </div>
 
         <div class="grid grid--3">
-          <article class="card advantage-card">
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
             <h3>Работа по договору</h3>
             <p>Юридическая чистота, строгое соблюдение регламентов ППР и полный комплект закрывающих документов для бухгалтерии.</p>
           </article>
 
-          <article class="card advantage-card">
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             <h3>Оперативный выезд</h3>
             <p>Быстрое реагирование на заявки по всей Москве, оперативный выезд инженера в день обращения.</p>
           </article>
 
-          <article class="card advantage-card">
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
             <h3>Опытные специалисты</h3>
             <p>Квалифицированный персонал с профильным опытом для профессионального монтажа и обслуживания систем.</p>
           </article>
@@ -103,15 +123,15 @@
     </section>
 
     <!-- УСЛУГИ -->
-    <section class="section" id="services">
+    <section class="section section--paper" id="services">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Направления</span>
           <h2>Что входит в комплекс услуг</h2>
         </div>
 
-        <div class="grid grid--3">
-          <article class="card">
+        <div class="spec-grid">
+          <article class="spec">
             <h3>Текущие неисправности</h3>
             <p>Оперативное устранение мелких поломок и бытовых неполадок на объекте.</p>
             <ul>
@@ -121,7 +141,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="spec">
             <h3>Регламентные работы</h3>
             <p>Проведение планово-предупредительных работ на всех инженерных системах.</p>
             <ul>
@@ -131,7 +151,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="spec">
             <h3>Текущий ремонт</h3>
             <p>Поддержание эстетического и рабочего состояния интерьеров.</p>
             <ul>
@@ -141,7 +161,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="spec">
             <h3>Ремонтно-строительные работы</h3>
             <p>Специализированные строительные и монтажные работы на объектах.</p>
             <ul>
@@ -151,7 +171,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="spec">
             <h3>Устранение засоров</h3>
             <p>Профессиональная прочистка и обслуживание внутренних сетей водоотведения.</p>
             <ul>
@@ -161,7 +181,7 @@
             </ul>
           </article>
 
-          <article class="card">
+          <article class="spec spec--alert">
             <h3>Аварийная поддержка 24/7</h3>
             <p>Круглосуточное реагирование на нештатные ситуации на объектах.</p>
             <ul>
@@ -175,7 +195,7 @@
     </section>
 
     <!-- БЛОК «КАК МЫ РАБОТАЕМ» -->
-    <section class="section section--darker" id="steps">
+    <section class="section" id="steps">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Процесс взаимодействия</span>
@@ -184,19 +204,17 @@
         </div>
 
         <div class="steps-grid">
-          <div class="card step-card">
+          <div class="step-card">
             <span class="step-num">01</span>
             <h3>Звонок или почта</h3>
             <p>Вы связываетесь с нами по телефону или через электронную почту, описываете задачи и специфику объекта.</p>
           </div>
-          <div class="step-card-arrow">→</div>
-          <div class="card step-card">
+          <div class="step-card">
             <span class="step-num">02</span>
             <h3>Выезд инженера и оценка</h3>
             <p>Наш специалист выезжает на объект в Москве для осмотра и расчета объема работ.</p>
           </div>
-          <div class="step-card-arrow">→</div>
-          <div class="card step-card">
+          <div class="step-card">
             <span class="step-num">03</span>
             <h3>Заключение договора и обслуживание</h3>
             <p>Подписываем договор, согласовываем график ППР и приступаем к обслуживанию.</p>
@@ -206,7 +224,7 @@
     </section>
 
     <!-- АЛГОРИТМ И АВАРИЙКА -->
-    <section class="section" id="algorithm">
+    <section class="section section--paper" id="algorithm">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Регламенты</span>
@@ -236,8 +254,9 @@
         </div>
       </div>
     </section>
+
     <!-- ЗОНА ОБСЛУЖИВАНИЯ -->
-    <section class="section section--darker" id="coverage">
+    <section class="section" id="coverage">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">География</span>
@@ -245,14 +264,15 @@
           <p>Работаем по всей Москве с оперативным выездом инженера</p>
         </div>
 
-        <div class="card service-zone-card">
+        <div class="service-zone-card">
           <div class="zone-badge"><span class="map-dot"></span> Город Москва</div>
           <p class="zone-desc">Осуществляем оперативный выезд специалистов, доставку оборудования и комплексное техническое обслуживание коммерческих объектов на всей территории столицы.</p>
         </div>
       </div>
     </section>
+
     <!-- ПОРТФОЛИО -->
-    <section class="section" id="portfolio">
+    <section class="section section--paper" id="portfolio">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Портфолио</span>
@@ -260,73 +280,91 @@
           <p>Реальные объекты коммерческой недвижимости в Москве</p>
         </div>
 
-        <div class="grid grid--3">
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_1.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="grid grid--3 portfolio-grid">
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_1.jpg" data-title="Монтаж систем кондиционирования" aria-label="Открыть фото: Монтаж систем кондиционирования">
+              <img src="img/photo_1.jpg" width="960" height="1280" alt="Объект 1: Монтаж систем кондиционирования" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №1</span>
               <h3>Монтаж систем кондиционирования</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_2.jpg" alt="Объект 2" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_2.jpg" data-title="Обслуживание кассетных блоков" aria-label="Открыть фото: Обслуживание кассетных блоков">
+              <img src="img/photo_2.jpg" width="960" height="1280" alt="Объект 2: Обслуживание кассетных блоков" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №2</span>
               <h3>Обслуживание кассетных блоков</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_3.jpg" alt="Объект 3" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_3.jpg" data-title="Монтаж вытяжной вентиляции" aria-label="Открыть фото: Монтаж вытяжной вентиляции">
+              <img src="img/photo_3.jpg" width="960" height="1280" alt="Объект 3: Монтаж вытяжной вентиляции" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №3</span>
               <h3>Монтаж вытяжной вентиляции</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_4.jpg" alt="Объект 4" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_4.jpg" data-title="Кабельные трассы и освещение" aria-label="Открыть фото: Кабельные трассы и освещение">
+              <img src="img/photo_4.jpg" width="960" height="1280" alt="Объект 4: Кабельные трассы и освещение" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №4</span>
               <h3>Кабельные трассы и освещение</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_5.jpg" alt="Объект 5" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_5.jpg" data-title="Сантехнические узлы и обвязка" aria-label="Открыть фото: Сантехнические узлы и обвязка">
+              <img src="img/photo_5.jpg" width="960" height="1280" alt="Объект 5: Сантехнические узлы и обвязка" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №5</span>
               <h3>Сантехнические узлы и обвязка</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_6.jpg" alt="Объект 6" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_6.jpg" data-title="Инженерные коммуникации" aria-label="Открыть фото: Инженерные коммуникации">
+              <img src="img/photo_6.jpg" width="960" height="1280" alt="Объект 6: Инженерные коммуникации" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №6</span>
               <h3>Инженерные коммуникации</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_7.jpg" alt="Объект 7" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_7.jpg" data-title="Наружные инженерные работы" aria-label="Открыть фото: Наружные инженерные работы">
+              <img src="img/photo_7.jpg" width="960" height="1280" alt="Объект 7: Наружные инженерные работы" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №7</span>
               <h3>Наружные инженерные работы</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_8.jpg" alt="Объект 8" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_8.jpg" data-title="Гидротехническое оборудование" aria-label="Открыть фото: Гидротехническое оборудование">
+              <img src="img/photo_8.jpg" width="960" height="1280" alt="Объект 8: Гидротехническое оборудование" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №8</span>
               <h3>Гидротехническое оборудование</h3>
             </div>
           </article>
 
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_9.jpg" alt="Объект 9" loading="lazy"></div>
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_9.jpg" data-title="Подключение оборудования" aria-label="Открыть фото: Подключение оборудования">
+              <img src="img/photo_9.jpg" width="960" height="1280" alt="Объект 9: Подключение оборудования" loading="lazy">
+            </button>
             <div class="project-body">
               <span class="project-num">Объект №9</span>
               <h3>Подключение оборудования</h3>
@@ -337,7 +375,7 @@
     </section>
 
     <!-- О КОМПАНИИ И ОКВЭД -->
-    <section class="section section--darker" id="about">
+    <section class="section" id="about">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">О компании</span>
@@ -348,12 +386,12 @@
           <div class="card">
             <h3>Виды деятельности по ОКВЭД</h3>
             <ul class="okved-list">
-              <li><strong>43.22</strong> — Сантехника, отопление, вентиляция</li>
-              <li><strong>43.31–43.39</strong> — Отделочные работы</li>
-              <li><strong>43.99.9</strong> — Прочие спец. строительные работы</li>
-              <li><strong>43.21</strong> — Электромонтажные работы</li>
-              <li><strong>25.11</strong> — Строительные металлоконструкции</li>
-              <li><strong>81.10</strong> — Комплексное обслуживание помещений</li>
+              <li><strong>43.22</strong><span>Сантехника, отопление, вентиляция</span></li>
+              <li><strong>43.31–43.39</strong><span>Отделочные работы</span></li>
+              <li><strong>43.99.9</strong><span>Прочие спец. строительные работы</span></li>
+              <li><strong>43.21</strong><span>Электромонтажные работы</span></li>
+              <li><strong>25.11</strong><span>Строительные металлоконструкции</span></li>
+              <li><strong>81.10</strong><span>Комплексное обслуживание помещений</span></li>
             </ul>
           </div>
 
@@ -371,7 +409,7 @@
     </section>
 
     <!-- КОНТАКТЫ -->
-    <section class="section" id="contacts">
+    <section class="section section--ink" id="contacts">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Связь</span>
@@ -379,18 +417,14 @@
         </div>
 
         <div class="grid grid--2 contacts-grid">
-          <div class="card contact-card">
-            <div>
-              <span class="c-label">Телефон</span>
-              <a href="tel:+79933513004" class="copy-phone-btn">+7 (993) 351-30-04</a>
-            </div>
+          <div class="contact-card">
+            <span class="c-label">Телефон</span>
+            <a href="tel:+79933513004" class="copy-phone-btn">+7 (993) 351-30-04</a>
           </div>
 
-          <div class="card contact-card">
-            <div>
-              <span class="c-label">Электронная почта</span>
-              <a href="mailto:ipostrishko@gmail.com">ipostrishko@gmail.com</a>
-            </div>
+          <div class="contact-card">
+            <span class="c-label">Электронная почта</span>
+            <a href="mailto:ipostrishko@gmail.com">ipostrishko@gmail.com</a>
           </div>
         </div>
       </div>
@@ -403,7 +437,16 @@
   </button>
 
   <!-- УВЕДОМЛЕНИЕ (ТОСТ) -->
-  <div id="copyToast" class="copy-toast">Номер скопирован в буфер обмена!</div>
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">Номер скопирован в буфер обмена!</div>
+
+  <!-- ПРОСМОТР ФОТО -->
+  <dialog class="lightbox" id="lightbox" aria-label="Просмотр фото">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Закрыть">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCap"></p>
+  </dialog>
 
   <footer class="footer">
     <div class="container footer__inner">
