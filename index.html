@@ -22,7 +22,6 @@
         <a href="#advantages">Преимущества</a>
         <a href="#steps">Как мы работаем</a>
         <a href="#portfolio">Портфолио</a>
-        <a href="#documents">Документы</a>
         <a href="#coverage">География</a>
         <a href="#about">О компании</a>
         <a href="#contacts">Контакты</a>
@@ -46,11 +45,10 @@
             Обеспечиваем бесперебойную работу инженерных систем, оперативно устраняем неисправности и поддерживаем коммерческие объекты в идеальном состоянии.
           </p>
 
-          <!-- БЛОК ПАРТНЕРОВ -->
+          <!-- БЛОК ПАРТНЕРОВ (Без Додо Пиццы) -->
           <div class="partners-block">
             <span class="partners-label">Ранее успешно работали с сетями:</span>
-            <div class="partners-grid">
-              <div class="partner-card">Додо Пицца</div>
+            <div class="partners-grid" style="grid-template-columns: repeat(3, 1fr);">
               <div class="partner-card">Rostic's</div>
               <div class="partner-card">SPAR</div>
               <div class="partner-card">pinskiy.co</div>
@@ -76,7 +74,7 @@
       </div>
     </section>
 
-    <!-- 1. БЛОК С ПРЕИМУЩЕСТВАМИ (ПОЧЕМУ МЫ?) -->
+    <!-- БЛОК С ПРЕИМУЩЕСТВАМИ -->
     <section class="section section--darker" id="advantages">
       <div class="container">
         <div class="section__head">
@@ -89,7 +87,7 @@
           <article class="card advantage-card">
             <div class="adv-icon">📋</div>
             <h3>Работа по договору</h3>
-            <p>Юридическая чистота, строе соблюдение регламентов ППР и полный комплект закрывающих документов для бухгалтерии.</p>
+            <p>Юридическая чистота, строгое соблюдение регламентов ППР и полный комплект закрывающих документов для бухгалтерии.</p>
           </article>
 
           <article class="card advantage-card">
@@ -179,7 +177,7 @@
       </div>
     </section>
 
-    <!-- 2. БЛОК «КАК МЫ РАБОТАЕМ» (В 3 ШАГА) -->
+    <!-- БЛОК «КАК МЫ РАБОТАЕМ» -->
     <section class="section section--darker" id="steps">
       <div class="container">
         <div class="section__head">
@@ -191,8 +189,8 @@
         <div class="steps-grid">
           <div class="card step-card">
             <span class="step-num">01</span>
-            <h3>Заявка или звонок</h3>
-            <p>Вы связываетесь с нами удобным способом, описываете задачи и специфику объекта.</p>
+            <h3>Звонок или почта</h3>
+            <p>Вы связываетесь с нами по телефону или через электронную почту, описываете задачи и специфику объекта.</p>
           </div>
           <div class="step-card-arrow">→</div>
           <div class="card step-card">
@@ -242,63 +240,24 @@
       </div>
     </section>
 
-    <!-- ОТДЕЛЬНЫЙ БЛОК: ДОКУМЕНТЫ -->
-    <section class="section section--darker" id="documents">
-      <div class="container">
-        <div class="section__head">
-          <span class="eyebrow">Легальность и допуски</span>
-          <h2>Документы и сертификаты</h2>
-          <p>Нажмите на документ, чтобы открыть его в полный экран</p>
-        </div>
-
-        <div class="docs-grid">
-          <div class="doc-thumb" onclick="openDocModal('img/doc_1.jpg', 'Свидетельство ИП')">
-            <div class="doc-img-wrap"><img src="img/doc_1.jpg" alt="Свидетельство ИП" loading="lazy"></div>
-            <div class="doc-title">Свидетельство ИП</div>
-          </div>
-          <div class="doc-thumb" onclick="openDocModal('img/doc_2.jpg', 'Допуски СРО')">
-            <div class="doc-img-wrap"><img src="img/doc_2.jpg" alt="Допуски СРО" loading="lazy"></div>
-            <div class="doc-title">Допуски СРО</div>
-          </div>
-          <div class="doc-thumb" onclick="openDocModal('img/doc_3.jpg', 'Электробезопасность')">
-            <div class="doc-img-wrap"><img src="img/doc_3.jpg" alt="Электробезопасность" loading="lazy"></div>
-            <div class="doc-title">Электробезопасность</div>
-          </div>
-          <div class="doc-thumb" onclick="openDocModal('img/doc_4.jpg', 'Сертификаты монтажа')">
-            <div class="doc-img-wrap"><img src="img/doc_4.jpg" alt="Сертификаты монтажа" loading="lazy"></div>
-            <div class="doc-title">Сертификаты монтажа</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ИТЕРАКТИВНАЯ КАРТА ПОКРЫТИЯ -->
-    <section class="section" id="coverage">
+    <!-- ЗОНА ОБСЛУЖИВАНИЯ -->
+    <section class="section section--darker" id="coverage">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">География</span>
           <h2>Зона обслуживания</h2>
-          <p>Работаем по Москве, выезд инженера в день обращения</p>
+          <p>Работаем по всей Москве и Московской области с оперативным выездом инженера</p>
         </div>
 
-        <div class="card map-card">
-          <div class="map-badge-overlay">
-            <span class="map-dot"></span> Зона покрытия: Москва
-          </div>
-          <div class="map-container">
-            <iframe 
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A315264b9b94090b8f0515159074b12270385966eb89a424177d5668db75b5b40&amp;source=constructor" 
-              width="100%" 
-              height="450" 
-              frameborder="0">
-            </iframe>
-          </div>
+        <div class="card service-zone-card">
+          <div class="zone-badge"><span class="map-dot"></span> Город Москва и Московская область</div>
+          <p class="zone-desc">Осуществляем оперативный выезд специалистов, доставку оборудования и комплексное техническое обслуживание коммерческих объектов на всей территории столицы и области.</p>
         </div>
       </div>
     </section>
 
     <!-- ПОРТФОЛИО -->
-    <section class="section section--darker" id="portfolio">
+    <section class="section" id="portfolio">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Портфолио</span>
@@ -312,7 +271,6 @@
             <div class="project-body">
               <span class="project-num">Объект №1</span>
               <h3>Монтаж систем кондиционирования</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -321,7 +279,6 @@
             <div class="project-body">
               <span class="project-num">Объект №2</span>
               <h3>Обслуживание кассетных блоков</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -330,7 +287,6 @@
             <div class="project-body">
               <span class="project-num">Объект №3</span>
               <h3>Монтаж вытяжной вентиляции</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -339,7 +295,6 @@
             <div class="project-body">
               <span class="project-num">Объект №4</span>
               <h3>Кабельные трассы и освещение</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -348,7 +303,6 @@
             <div class="project-body">
               <span class="project-num">Объект №5</span>
               <h3>Сантехнические узлы и обвязка</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -357,7 +311,6 @@
             <div class="project-body">
               <span class="project-num">Объект №6</span>
               <h3>Инженерные коммуникации</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -366,7 +319,6 @@
             <div class="project-body">
               <span class="project-num">Объект №7</span>
               <h3>Наружные инженерные работы</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -375,7 +327,6 @@
             <div class="project-body">
               <span class="project-num">Объект №8</span>
               <h3>Гидротехническое оборудование</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
 
@@ -384,16 +335,6 @@
             <div class="project-body">
               <span class="project-num">Объект №9</span>
               <h3>Подключение оборудования</h3>
-              <p class="project-desc">Описание</p>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="project-img"><img src="img/photo_10.jpg" alt="Объект 10" loading="lazy"></div>
-            <div class="project-body">
-              <span class="project-num">Объект №10</span>
-              <h3>Монтаж сплит-системы</h3>
-              <p class="project-desc">Описание</p>
             </div>
           </article>
         </div>
@@ -401,7 +342,7 @@
     </section>
 
     <!-- О КОМПАНИИ И ОКВЭД -->
-    <section class="section" id="about">
+    <section class="section section--darker" id="about">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">О компании</span>
@@ -435,7 +376,7 @@
     </section>
 
     <!-- КОНТАКТЫ -->
-    <section class="section section--darker" id="contacts">
+    <section class="section" id="contacts">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Связь</span>
@@ -461,18 +402,10 @@
     </section>
   </main>
 
-  <!-- 3. ПЛАВАЮЩАЯ КНОПКА ТЕЛЕФОНА В УГЛУ ЭКРАНА -->
+  <!-- ПЛАВАЮЩАЯ КНОПКА ТЕЛЕФОНА -->
   <button class="floating-phone-btn copy-phone-btn" type="button" aria-label="Позвонить инженеру">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
   </button>
-
-  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ДОКУМЕНТОВ -->
-  <div id="docModal" class="modal-overlay" onclick="closeDocModal(event)">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeDocModalDirect()">&times;</button>
-      <img id="modalImage" src="" alt="Документ">
-    </div>
-  </div>
 
   <!-- УВЕДОМЛЕНИЕ (ТОСТ) -->
   <div id="copyToast" class="copy-toast">Номер скопирован в буфер обмена!</div>
