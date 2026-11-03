@@ -1,637 +1,459 @@
-:root {
-  --bg: #0a0e17;
-  --bg-card: #121824;
-  --bg-card-hover: #192233;
-  --border: #222d42;
-  --text: #e2e8f0;
-  --text-muted: #8a99ad;
-  --primary: #f59e0b;
-  --primary-hover: #d97706;
-  --accent: #38bdf8;
-  --radius: 12px;
-  --container: 1200px;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.container {
-  max-width: var(--container);
-  margin-inline: auto;
-  padding-inline: 24px;
-}
-
-/* HEADER */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(10, 14, 23, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-.header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 76px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo__mark {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: 8px;
-}
-
-.logo__text {
-  font-weight: 700;
-  font-size: 1.1rem;
-  line-height: 1.1;
-  color: #fff;
-}
-
-.logo__text em {
-  font-style: normal;
-  color: var(--primary);
-}
-
-.logo__text small {
-  display: block;
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-.nav a:hover {
-  color: #fff;
-}
-
-.phone-btn {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--primary);
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.25);
-  padding: 10px 18px;
-  border-radius: var(--radius);
-  white-space: nowrap;
-}
-
-.phone-btn:hover {
-  background: rgba(245, 158, 11, 0.2);
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-.btn--primary {
-  background: var(--primary);
-  color: #000;
-  border: none;
-}
-
-.btn--primary:hover {
-  background: var(--primary-hover);
-}
-
-.btn--outline {
-  border: 1px solid var(--border);
-  color: #fff;
-  background: transparent;
-}
-
-.btn--outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* CARDS & LAYOUT */
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.card:hover {
-  border-color: rgba(56, 189, 248, 0.3);
-  transform: translateY(-2px);
-}
-
-.badge {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.1);
-  color: var(--accent);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
-}
-
-/* HERO */
-.hero {
-  padding: 80px 0 60px;
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 2.7rem;
-  line-height: 1.15;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-
-.hero__lead {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 32px;
-}
-
-/* БЛОК ПАРТНЕРОВ */
-.partners-block {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  padding: 24px;
-  border-radius: var(--radius);
-  margin-bottom: 32px;
-}
-
-.partners-label {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-}
-
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.partner-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
-  padding: 14px 10px;
-  text-align: center;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #fff;
-  transition: all 0.2s ease;
-}
-
-.partner-card:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: rgba(245, 158, 11, 0.05);
-}
-
-.hero__cta {
-  display: flex;
-  gap: 16px;
-}
-
-.hero__card h3 {
-  font-size: 1.3rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.hero__card p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-}
-
-.hero__facts {
-  list-style: none;
-  font-size: 0.9rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero__facts li strong {
-  color: var(--primary);
-}
-
-/* СТИЛИ ДЛЯ БЛОКА ПРЕИМУЩЕСТВ */
-.advantage-card {
-  background: var(--bg-card);
-}
-
-.adv-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.advantage-card h3 {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.advantage-card p {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin-bottom: 0;
-}
-
-/* СТИЛИ ДЛЯ БЛОКА «КАК МЫ РАБОТАЕМ» */
-.steps-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  gap: 16px;
-  align-items: center;
-}
-
-.step-card {
-  position: relative;
-  background: var(--bg-card);
-}
-
-.step-num {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--primary);
-  background: rgba(245, 158, 11, 0.1);
-  padding: 4px 10px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 12px;
-}
-
-.step-card h3 {
-  font-size: 1.15rem;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.step-card p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-}
-
-.step-card-arrow {
-  color: var(--text-muted);
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* SECTIONS */
-.section {
-  padding: 80px 0;
-  border-top: 1px solid var(--border);
-}
-
-.section--darker {
-  background: #070a12;
-}
-
-.section__head {
-  margin-bottom: 48px;
-}
-
-.eyebrow {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
-}
-
-.section__head h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #fff;
-}
-
-.section__head p {
-  color: var(--text-muted);
-  margin-top: 6px;
-  font-size: 1.05rem;
-}
-
-/* ЗОНА ОБСЛУЖИВАНИЯ */
-.service-zone-card {
-  text-align: center;
-  padding: 48px;
-  background: var(--bg-card);
-}
-
-.zone-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(245, 158, 11, 0.1);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: var(--primary);
-  padding: 8px 20px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 16px;
-}
-
-.map-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 8px var(--primary);
-}
-
-.zone-desc {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* GRIDS */
-.grid {
-  display: grid;
-  gap: 24px;
-}
-
-.grid--2 { grid-template-columns: repeat(2, 1fr); }
-.grid--3 { grid-template-columns: repeat(3, 1fr); }
-
-.card h3 {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  margin-bottom: 16px;
-  flex: 1;
-}
-
-.card ul {
-  list-style: none;
-  font-size: 0.88rem;
-  color: #cbd5e1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-}
-
-.card ul li::before {
-  content: "— ";
-  color: var(--primary);
-}
-
-/* PORTFOLIO */
-.project-card {
-  padding: 0;
-  overflow: hidden;
-}
-
-.project-img {
-  aspect-ratio: 4/3;
-  background: #000;
-}
-
-.project-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-body {
-  padding: 24px;
-}
-
-.project-num {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--primary);
-  text-transform: uppercase;
-}
-
-.project-body h3 {
-  font-size: 1.15rem;
-  color: #fff;
-  margin: 6px 0 0;
-}
-
-/* LEGAL & CONTACTS */
-.okved-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  font-size: 0.9rem;
-}
-
-.legal-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-
-.legal-table td {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.legal-table td:first-child {
-  color: var(--text-muted);
-  width: 40%;
-}
-
-.legal-table td:last-child {
-  color: #fff;
-  font-weight: 600;
-}
-
-.contacts-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.contact-card {
-  padding: 28px;
-}
-
-.c-label {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
-
-.contact-card a {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #fff;
-  word-break: break-all;
-}
-
-.contact-card a:hover {
-  color: var(--primary);
-}
-
-/* ПЛАВАЮЩАЯ КНОПКА ТЕЛЕФОНА */
-.floating-phone-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background: var(--primary);
-  color: #000;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-  cursor: pointer;
-  z-index: 999;
-  transition: transform 0.2s, background 0.2s;
-}
-
-.floating-phone-btn:hover {
-  transform: scale(1.1);
-  background: var(--primary-hover);
-}
-
-/* УВЕДОМЛЕНИЕ (ТОСТ) */
-.copy-toast {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: #1e293b;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  z-index: 1000;
-}
-
-.copy-toast.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
-
-/* FOOTER */
-.footer {
-  background: #070a12;
-  padding: 32px 0;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-@media(max-width: 900px) {
-  .hero__inner, .grid--2, .grid--3, .contacts-grid, .partners-grid, .steps-grid {
-    grid-template-columns: 1fr;
-  }
-  .step-card-arrow {
-    display: none;
-  }
-  .nav {
-    display: none;
-  }
-  .phone-btn {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-  }
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ИП Остришко Н.В. — Техническое обслуживание коммерческой недвижимости</title>
+  <meta name="description" content="Комплексное техническое обслуживание офисов, ресторанов и коммерческой недвижимости в Москве. Монтаж инженерных систем, аварийная поддержка 24/7. ИП Остришко Н.В.">
+  <meta name="theme-color" content="#0e1b2c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e1b2c'/%3E%3Crect x='19' y='19' width='8' height='8' rx='2' fill='%23d9480f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#top">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span class="logo__text">ИП <em>ОСТРИШКО Н.В.</em><small>Обслуживание и спецмонтаж</small></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Основное меню">
+        <a href="#services">Услуги</a>
+        <a href="#advantages">Преимущества</a>
+        <a href="#steps">Как мы работаем</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#coverage">География</a>
+        <a href="#about">О компании</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__contacts">
+        <a href="tel:+79933513004" class="phone-btn copy-phone-btn">+7 (993) 351-30-04</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO БЛОК -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge">B2B-подрядчик · Техническое обслуживание · Ремонт</span>
+          <h1>Техническое обслуживание офисов, ресторанов и коммерческой недвижимости</h1>
+          <p class="hero__lead">
+            Обеспечиваем бесперебойную работу инженерных систем, оперативно устраняем неисправности и поддерживаем коммерческие объекты в идеальном состоянии.
+          </p>
+
+          <div class="hero__cta">
+            <button class="btn btn--primary copy-phone-btn" type="button">Позвонить инженеру</button>
+            <a class="btn btn--outline" href="#services">Смотреть услуги</a>
+          </div>
+
+          <!-- БЛОК ПАРТНЕРОВ -->
+          <div class="partners-block">
+            <span class="partners-label">Ранее успешно работали с сетями:</span>
+            <div class="partners-grid">
+              <div class="partner-card">Rostic's</div>
+              <div class="partner-card">SPAR</div>
+              <div class="partner-card">pinskiy.co</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="mosaic">
+            <img class="mosaic__a" src="img/photo_5.jpg" width="960" height="1280" alt="Сантехнические узлы и обвязка">
+            <img class="mosaic__b" src="img/photo_4.jpg" width="960" height="1280" alt="Кабельные трассы и освещение">
+            <img class="mosaic__c" src="img/photo_2.jpg" width="960" height="1280" alt="Обслуживание кассетных блоков">
+          </div>
+
+          <aside class="card hero__card">
+            <h3>Официальный подрядчик</h3>
+            <p>Работаем по договору. Предоставляем полный комплект закрывающих документов для юрлиц.</p>
+            <ul class="hero__facts">
+              <li><strong>ИП:</strong> Остришко Н.В.</li>
+              <li><strong>ИНН:</strong> 972712228181</li>
+              <li><strong>ОГРНИП:</strong> 325774600678487</li>
+              <li><strong>ИФНС:</strong> № 27 по г. Москве</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОК С ПРЕИМУЩЕСТВАМИ -->
+    <section class="section" id="advantages">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Надежность</span>
+          <h2>Почему выбирают нас</h2>
+          <p>Профессиональный подход к обслуживанию коммерческих объектов</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+            <h3>Работа по договору</h3>
+            <p>Юридическая чистота, строгое соблюдение регламентов ППР и полный комплект закрывающих документов для бухгалтерии.</p>
+          </article>
+
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3>Оперативный выезд</h3>
+            <p>Быстрое реагирование на заявки по всей Москве, оперативный выезд инженера в день обращения.</p>
+          </article>
+
+          <article class="advantage-card">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+            <h3>Опытные специалисты</h3>
+            <p>Квалифицированный персонал с профильным опытом для профессионального монтажа и обслуживания систем.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section section--paper" id="services">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Направления</span>
+          <h2>Что входит в комплекс услуг</h2>
+        </div>
+
+        <div class="spec-grid">
+          <article class="spec">
+            <h3>Текущие неисправности</h3>
+            <p>Оперативное устранение мелких поломок и бытовых неполадок на объекте.</p>
+            <ul>
+              <li>Замена ламп, светильников</li>
+              <li>Ремонт розеток и выключателей</li>
+              <li>Мелкий ремонт сантехники</li>
+            </ul>
+          </article>
+
+          <article class="spec">
+            <h3>Регламентные работы</h3>
+            <p>Проведение планово-предупредительных работ на всех инженерных системах.</p>
+            <ul>
+              <li>Обслуживание вентиляции и кондиционеров</li>
+              <li>Проверка электрощитовых</li>
+              <li>Контроль систем водоснабжения</li>
+            </ul>
+          </article>
+
+          <article class="spec">
+            <h3>Текущий ремонт</h3>
+            <p>Поддержание эстетического и рабочего состояния интерьеров.</p>
+            <ul>
+              <li>Ремонт мебели и дверных замков</li>
+              <li>Восстановление покрытий</li>
+              <li>Косметический ремонт стен</li>
+            </ul>
+          </article>
+
+          <article class="spec">
+            <h3>Ремонтно-строительные работы</h3>
+            <p>Специализированные строительные и монтажные работы на объектах.</p>
+            <ul>
+              <li>Отделочные работы</li>
+              <li>Электромонтаж</li>
+              <li>Спецмонтаж оборудования</li>
+            </ul>
+          </article>
+
+          <article class="spec">
+            <h3>Устранение засоров</h3>
+            <p>Профессиональная прочистка и обслуживание внутренних сетей водоотведения.</p>
+            <ul>
+              <li>Устранение локальных засоров</li>
+              <li>Обслуживание жироуловителей</li>
+              <li>Промывка труб</li>
+            </ul>
+          </article>
+
+          <article class="spec spec--alert">
+            <h3>Аварийная поддержка 24/7</h3>
+            <p>Круглосуточное реагирование на нештатные ситуации на объектах.</p>
+            <ul>
+              <li>Прием заявок 24/7</li>
+              <li>Экстренный выезд бригады</li>
+              <li>Локализация аварий</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОК «КАК МЫ РАБОТАЕМ» -->
+    <section class="section" id="steps">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Процесс взаимодействия</span>
+          <h2>Как мы работаем</h2>
+          <p>Простой и прозрачный порядок сотрудничества от первого обращения до результата</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Звонок или почта</h3>
+            <p>Вы связываетесь с нами по телефону или через электронную почту, описываете задачи и специфику объекта.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Выезд инженера и оценка</h3>
+            <p>Наш специалист выезжает на объект в Москве для осмотра и расчета объема работ.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Заключение договора и обслуживание</h3>
+            <p>Подписываем договор, согласовываем график ППР и приступаем к обслуживанию.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- АЛГОРИТМ И АВАРИЙКА -->
+    <section class="section section--paper" id="algorithm">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Регламенты</span>
+          <h2>Порядок регламентных работ</h2>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Алгоритм работы</h3>
+            <ul class="check-list">
+              <li>Техническое обслуживание проводится по согласованному графику.</li>
+              <li>Текущие заявки принимаются ежедневно.</li>
+              <li>Перечень ППР фиксируется при заключении договора.</li>
+              <li>Аварийная служба на связи круглосуточно.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Аварийные работы</h3>
+            <ul class="check-list">
+              <li>Оперативный выезд и локализация аварий.</li>
+              <li>Ликвидация протечек отопления и водоснабжения.</li>
+              <li>Восстановление электроснабжения.</li>
+              <li>Профилактика инженерных систем.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗОНА ОБСЛУЖИВАНИЯ -->
+    <section class="section" id="coverage">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">География</span>
+          <h2>Зона обслуживания</h2>
+          <p>Работаем по всей Москве с оперативным выездом инженера</p>
+        </div>
+
+        <div class="service-zone-card">
+          <div class="zone-badge"><span class="map-dot"></span> Город Москва</div>
+          <p class="zone-desc">Осуществляем оперативный выезд специалистов, доставку оборудования и комплексное техническое обслуживание коммерческих объектов на всей территории столицы.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОРТФОЛИО -->
+    <section class="section section--paper" id="portfolio">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Портфолио</span>
+          <h2>Примеры выполненных работ</h2>
+          <p>Реальные объекты коммерческой недвижимости в Москве</p>
+        </div>
+
+        <div class="grid grid--3 portfolio-grid">
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_1.jpg" data-title="Монтаж систем кондиционирования" aria-label="Открыть фото: Монтаж систем кондиционирования">
+              <img src="img/photo_1.jpg" width="960" height="1280" alt="Объект 1: Монтаж систем кондиционирования" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №1</span>
+              <h3>Монтаж систем кондиционирования</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_2.jpg" data-title="Обслуживание кассетных блоков" aria-label="Открыть фото: Обслуживание кассетных блоков">
+              <img src="img/photo_2.jpg" width="960" height="1280" alt="Объект 2: Обслуживание кассетных блоков" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №2</span>
+              <h3>Обслуживание кассетных блоков</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_3.jpg" data-title="Монтаж вытяжной вентиляции" aria-label="Открыть фото: Монтаж вытяжной вентиляции">
+              <img src="img/photo_3.jpg" width="960" height="1280" alt="Объект 3: Монтаж вытяжной вентиляции" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №3</span>
+              <h3>Монтаж вытяжной вентиляции</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_4.jpg" data-title="Кабельные трассы и освещение" aria-label="Открыть фото: Кабельные трассы и освещение">
+              <img src="img/photo_4.jpg" width="960" height="1280" alt="Объект 4: Кабельные трассы и освещение" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №4</span>
+              <h3>Кабельные трассы и освещение</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_5.jpg" data-title="Сантехнические узлы и обвязка" aria-label="Открыть фото: Сантехнические узлы и обвязка">
+              <img src="img/photo_5.jpg" width="960" height="1280" alt="Объект 5: Сантехнические узлы и обвязка" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №5</span>
+              <h3>Сантехнические узлы и обвязка</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_6.jpg" data-title="Инженерные коммуникации" aria-label="Открыть фото: Инженерные коммуникации">
+              <img src="img/photo_6.jpg" width="960" height="1280" alt="Объект 6: Инженерные коммуникации" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №6</span>
+              <h3>Инженерные коммуникации</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_7.jpg" data-title="Наружные инженерные работы" aria-label="Открыть фото: Наружные инженерные работы">
+              <img src="img/photo_7.jpg" width="960" height="1280" alt="Объект 7: Наружные инженерные работы" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №7</span>
+              <h3>Наружные инженерные работы</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_8.jpg" data-title="Гидротехническое оборудование" aria-label="Открыть фото: Гидротехническое оборудование">
+              <img src="img/photo_8.jpg" width="960" height="1280" alt="Объект 8: Гидротехническое оборудование" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №8</span>
+              <h3>Гидротехническое оборудование</h3>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <button class="project-img" type="button" data-full="img/photo_9.jpg" data-title="Подключение оборудования" aria-label="Открыть фото: Подключение оборудования">
+              <img src="img/photo_9.jpg" width="960" height="1280" alt="Объект 9: Подключение оборудования" loading="lazy">
+            </button>
+            <div class="project-body">
+              <span class="project-num">Объект №9</span>
+              <h3>Подключение оборудования</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- О КОМПАНИИ И ОКВЭД -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">О компании</span>
+          <h2>ИП Остришко Наталья Владимировна</h2>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <h3>Виды деятельности по ОКВЭД</h3>
+            <ul class="okved-list">
+              <li><strong>43.22</strong><span>Сантехника, отопление, вентиляция</span></li>
+              <li><strong>43.31–43.39</strong><span>Отделочные работы</span></li>
+              <li><strong>43.99.9</strong><span>Прочие спец. строительные работы</span></li>
+              <li><strong>43.21</strong><span>Электромонтажные работы</span></li>
+              <li><strong>25.11</strong><span>Строительные металлоконструкции</span></li>
+              <li><strong>81.10</strong><span>Комплексное обслуживание помещений</span></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Реквизиты</h3>
+            <table class="legal-table">
+              <tr><td>Наименование:</td><td>ИП Остришко Н.В.</td></tr>
+              <tr><td>ИНН:</td><td>972712228181</td></tr>
+              <tr><td>ОГРНИП:</td><td>325774600678487</td></tr>
+              <tr><td>Налоговая:</td><td>ИФНС № 27 по г. Москве</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section section--ink" id="contacts">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Связь</span>
+          <h2>Контакты</h2>
+        </div>
+
+        <div class="grid grid--2 contacts-grid">
+          <div class="contact-card">
+            <span class="c-label">Телефон</span>
+            <a href="tel:+79933513004" class="copy-phone-btn">+7 (993) 351-30-04</a>
+          </div>
+
+          <div class="contact-card">
+            <span class="c-label">Электронная почта</span>
+            <a href="mailto:ipostrishko@gmail.com">ipostrishko@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ПЛАВАЮЩАЯ КНОПКА ТЕЛЕФОНА -->
+  <button class="floating-phone-btn copy-phone-btn" type="button" aria-label="Позвонить инженеру">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  </button>
+
+  <!-- УВЕДОМЛЕНИЕ (ТОСТ) -->
+  <div id="copyToast" class="copy-toast" role="status" aria-live="polite">Номер скопирован в буфер обмена!</div>
+
+  <!-- ПРОСМОТР ФОТО -->
+  <dialog class="lightbox" id="lightbox" aria-label="Просмотр фото">
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Закрыть">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="">
+    <p id="lightboxCap"></p>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 ИП Остришко Наталья Владимировна. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
